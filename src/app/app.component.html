@@ -1,0 +1,15 @@
+<div>
+    <div class="app-logo">
+        <img class="logo-img" src="https://seeklogo.com/images/W/weather-underground-logo-A902864182-seeklogo.com.png">
+    </div>
+    <div class="navigation-buttons">
+        <button class="rout-button" mat-raised-button color="warn" routerLink="home">
+            <mat-icon>home</mat-icon>  Home
+        </button>
+        <button class="rout-button" mat-raised-button color="warn" routerLink="favorites" matBadge="{{weatherService.getFavoritesCities().length}}" matBadgeColor="warn">
+            <mat-icon >bookmark</mat-icon>  Favorites
+        </button>
+    </div>
+</div>
+<router-outlet></router-outlet>
+

@@ -1,0 +1,60 @@
+.home-page{
+  border: 3px solid;
+  color: white;
+  margin: 90px;
+}
+
+.city-title{
+  text-align: center;
+  margin-top: 40px;
+}
+
+.weather{
+  text-align: center;
+}
+
+.day-weather{
+  margin: 40px;
+  border: 2px solid;
+  display: inline-block;
+  height: 150px;
+  width: 200px;
+}
+
+.favorite-button-wrapper{
+  text-align: right;
+  margin: 20px;
+}
+
+
+.search-container{
+  text-align: center;
+}
+.form-control{
+  margin-right: 10px;
+  display:inline;
+  width: 300px;
+}
+
+.search-button{
+  height: 37px;
+  margin-bottom: 5px;
+}
+
+.current-condition{
+  text-align: center;
+}
+
+.remove-button{
+  background-color: #ffffff;
+  color: red !important;
+}
+
+.add-button{
+  background-color: #a0a0a0;
+  color: white !important;
+}
+
+h3, h2, h1{
+  color: #0ab4eb;
+}
