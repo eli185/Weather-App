@@ -1,0 +1,86 @@
+<div class="home-page">
+    <div>
+        <div class="favorite-button-wrapper">
+            <button mat-fab color="warn" class="favorite-button"
+                    matTooltip="{{weatherService.isOnFavorite(currentCity) ? ' Remove from favorite' :' Add to favorite'}}"
+                    (click)="onFavoriteButtonClick()"
+                    [ngClass]="weatherService.isOnFavorite(currentCity) ? 'remove-button' :'add-button'">
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <div class="degrees-button-wrapper">
+                <button mat-raised-button color="warn" class="degrees-button"
+                        matTooltip="{{currentDegree === CELSIUS ? 'Change to fahrenheit degrees' :'Change to celsius degrees'}}"
+                        (click)="onChangeDegreesButtonClick()">
+                    {{currentDegree === CELSIUS ? 'Fahrenheit' :'Celsius'}}
+                </button>
+            </div>
+        </div>
+
+    </div>
+    <div class="search-container">
+        <form class="example-form" [formGroup] = "myControl">
+            <mat-form-field class="example-full-width">
+                <input  #weatherInput matInput
+                       placeholder="City"
+                       aria-label="State"
+                       (ngModelChange)="_filter(weatherInput.value)"
+                       [matAutocomplete]="auto"
+                       [formControl]="myControl">
+                <mat-autocomplete #auto="matAutocomplete">
+                    <mat-option *ngFor="let city of citiesOptions" [value]="city.LocalizedName">
+                        <span>{{city.LocalizedName}}</span>
+                    </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </form>
+        <button mat-raised-button color="accent" class="search-button" type="submit" (click)="sendToAPIXU(weatherInput.value)">Search for the weather</button>
+    </div>
+    <h1 class="city-title"> {{currentCity}} clouds </h1>
+
+    <div class="current-condition">
+        <span class="day-weather">
+                <h2> Current Condition:</h2>
+                <h3 *ngIf="currentConditionsData"> {{currentConditionsData[0].Temperature.Metric.Value}}
+                    {{currentDegree === CELSIUS ? '&#8451;' : '&#8457;'}}</h3>
+                <h3 *ngIf="currentCityForecastsWeatherData"> {{currentConditionsData[0].WeatherText}}</h3>
+            </span>
+    </div>
+    <div class="weather">
+        <span class="day-weather">
+            <h2> Sun</h2>
+            <h3 *ngIf="currentCityForecastsWeatherData"> {{calculateDegrees(currentCityForecastsWeatherData.DailyForecasts[0].Temperature.Minimum.Value)}}
+                - {{calculateDegrees(currentCityForecastsWeatherData.DailyForecasts[0].Temperature.Maximum.Value)}}
+                {{currentDegree === CELSIUS ? '&#8451;' : '&#8457;'}}</h3>
+            <h3 *ngIf="currentCityForecastsWeatherData"> {{currentCityForecastsWeatherData.DailyForecasts[0].Day.IconPhrase}}</h3>
+        </span>
+        <span class="day-weather">
+            <h2> Mon</h2>
+            <h3 *ngIf="currentCityForecastsWeatherData"> {{calculateDegrees(currentCityForecastsWeatherData.DailyForecasts[1].Temperature.Minimum.Value)}}
+                - {{calculateDegrees(currentCityForecastsWeatherData.DailyForecasts[1].Temperature.Maximum.Value)}}
+                {{currentDegree === CELSIUS ? '&#8451;' : '&#8457;'}}</h3>
+            <h3 *ngIf="currentCityForecastsWeatherData"> {{currentCityForecastsWeatherData.DailyForecasts[1].Day.IconPhrase}}</h3>
+        </span>
+        <span class="day-weather">
+            <h2> Tue</h2>
+            <h3 *ngIf="currentCityForecastsWeatherData"> {{calculateDegrees(currentCityForecastsWeatherData.DailyForecasts[2].Temperature.Minimum.Value)}}
+                - {{calculateDegrees(currentCityForecastsWeatherData.DailyForecasts[2].Temperature.Maximum.Value)}}
+                {{currentDegree === CELSIUS ? '&#8451;' : '&#8457;'}}</h3>
+            <h3 *ngIf="currentCityForecastsWeatherData"> {{currentCityForecastsWeatherData.DailyForecasts[2].Day.IconPhrase}}</h3>
+        </span>
+        <span class="day-weather">
+            <h2> Wed</h2>
+            <h3 *ngIf="currentCityForecastsWeatherData"> {{calculateDegrees(currentCityForecastsWeatherData.DailyForecasts[3].Temperature.Minimum.Value)}}
+                - {{calculateDegrees(currentCityForecastsWeatherData.DailyForecasts[3].Temperature.Maximum.Value)}}
+                {{currentDegree === CELSIUS ? '&#8451;' : '&#8457;'}}</h3>
+            <h3 *ngIf="currentCityForecastsWeatherData"> {{currentCityForecastsWeatherData.DailyForecasts[3].Day.IconPhrase}}</h3>
+        </span>
+        <span class="day-weather">
+            <h2> Thu</h2>
+            <h3 *ngIf="currentCityForecastsWeatherData"> {{calculateDegrees(currentCityForecastsWeatherData.DailyForecasts[4].Temperature.Minimum.Value)}}
+                - {{calculateDegrees(currentCityForecastsWeatherData.DailyForecasts[4].Temperature.Maximum.Value)}}
+                {{currentDegree === CELSIUS ? '&#8451;' : '&#8457;'}}</h3>
+            <h3 *ngIf="currentCityForecastsWeatherData"> {{currentCityForecastsWeatherData.DailyForecasts[4].Day.IconPhrase}}</h3>
+        </span>
+    </div>
+
+</div>

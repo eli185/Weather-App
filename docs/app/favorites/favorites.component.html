@@ -1,0 +1,15 @@
+<div class="favorites-page">
+    <h1 class="favorites-title"> Favorites Cities:</h1>
+    <div class="weather" *ngIf="favoritesCities.length == 0">
+        <span>
+            <h3> You have no favorite cities yet</h3>
+        </span>
+    </div>
+    <div class="weather">
+        <span class="day-weather" *ngFor="let city of favoritesCities">
+            <h2> {{city.name}}</h2>
+            <h3> {{city.conditionsData.Temperature.Metric.Value}} &#8451;</h3>
+            <h3> {{city.conditionsData.WeatherText}}</h3>
+        </span>
+    </div>
+</div>
