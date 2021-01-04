@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpResponse} from "@angular/common/http";
-import {Observable, of} from "rxjs";
+import {Observable, of, Subject} from "rxjs";
 
 export class City {
   name: string;
@@ -17,6 +17,8 @@ export class City {
 })
 export class WeatherService {
   private favoritesCities :City[] = [];
+  currentTheme;
+  themesOptions =  ['Light-Mode', 'Dark-Mode'];
    mockAutoComplete = [
     {
       "Version": 1,
@@ -276,6 +278,9 @@ export class WeatherService {
      }
    ];
 
+  // Observable sources
+  static themeSubject = new Subject<any>();
+
   constructor(private http: HttpClient) {
   }
 
@@ -325,6 +330,10 @@ export class WeatherService {
     //     'http://dataservice.accuweather.com/forecasts/v1/daily/5day/' + locationKey + '?apikey=jCj6Vr94FmFTGVv8GL3GnRWZI3AMa3Gr'
     // );
     return of( new HttpResponse({ status: 200, body: this.mockForecasts }).body);
+  }
+
+  static notifyThemeChanged(theme) {
+    this.themeSubject.next(theme);
   }
 
 }

@@ -1,6 +1,6 @@
-<div>
+<div [ngClass]="weatherService.currentTheme === 'Light-Mode' ? 'light-background' : 'dark-background'">
     <div class="app-logo">
-        <img class="logo-img" src="https://seeklogo.com/images/W/weather-underground-logo-A902864182-seeklogo.com.png">
+        <img class="logo-img" src="{{weatherService.currentTheme === 'Light-Mode' ? 'assets/logos/light-mode-logo.png' : 'assets/logos/dark-mode-logo.png'}}">
     </div>
     <div class="navigation-buttons">
         <button class="rout-button" mat-raised-button color="warn" routerLink="home">
@@ -9,7 +9,16 @@
         <button class="rout-button" mat-raised-button color="warn" routerLink="favorites" matBadge="{{weatherService.getFavoritesCities().length}}" matBadgeColor="warn">
             <mat-icon >bookmark</mat-icon>  Favorites
         </button>
+        <div class="theme-dropdown">
+            <mat-form-field appearance="fill">
+                <mat-label>Select theme</mat-label>
+                <mat-select  [(value)]="weatherService.currentTheme" (valueChange)="onThemeChanged()">
+                    <mat-option *ngFor="let theme of weatherService.themesOptions" [value]="theme">
+                        {{theme}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
     </div>
+    <router-outlet></router-outlet>
 </div>
-<router-outlet></router-outlet>
-

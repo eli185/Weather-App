@@ -15,6 +15,8 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatBadgeModule} from "@angular/material/badge";
+import {ToastrModule} from "ngx-toastr";
+import {MatSelectModule} from "@angular/material/select";
 
 @NgModule({
   declarations: [
@@ -38,6 +40,10 @@ import {MatBadgeModule} from "@angular/material/badge";
         MatTooltipModule,
         FormsModule,
         MatBadgeModule,
+        ToastrModule.forRoot({
+            positionClass: 'toast-bottom-right',
+        }),
+        MatSelectModule
 
     ],
   providers: [WeatherService],

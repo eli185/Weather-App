@@ -1,3 +1,15 @@
+.light-background {
+    background-image: url(https://t3.ftcdn.net/jpg/02/21/28/00/240_F_221280023_cqXBxKJr0ibEJlljlGRGfL309Ke47mGa.jpg);
+    background-size: cover;
+    height: 75em;
+}
+
+.dark-background {
+    background-image: url(https://t4.ftcdn.net/jpg/02/96/63/33/240_F_296633355_3Jd8R11QbtVfz5jHwm8QSasIS4MiUCIN.jpg);
+    background-size: cover;
+    height: 75em;
+}
+
 .navigation-buttons{
     text-align: right;
     margin: 0 35px;
@@ -15,6 +27,11 @@
     position: absolute;
 }
  .logo-img{
-     max-width: 200px;
-     max-height: 150px;
+     /*max-width: 200px;*/
+     /*max-height: 150px;*/
+ }
+
+ .theme-dropdown{
+     margin: 25px 5px;
+     float: left;
  }
