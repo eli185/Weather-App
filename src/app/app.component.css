@@ -1,13 +1,19 @@
 .light-background {
     background-image: url(https://t3.ftcdn.net/jpg/02/21/28/00/240_F_221280023_cqXBxKJr0ibEJlljlGRGfL309Ke47mGa.jpg);
     background-size: cover;
-    /*height: 75em;*/
+    background-repeat: no-repeat;
+    background-position:50% 50%;
+    height: 100%;
+    overflow-x: scroll;
 }
 
 .dark-background {
     background-image: url(https://t4.ftcdn.net/jpg/02/96/63/33/240_F_296633355_3Jd8R11QbtVfz5jHwm8QSasIS4MiUCIN.jpg);
     background-size: cover;
-    /*height: 75em;*/
+    background-repeat: no-repeat;
+    background-position:50% 50%;
+    height: 100%;
+    overflow-x: scroll;
 }
 
 .navigation-buttons{
@@ -23,13 +29,9 @@
 }
 
 .app-logo{
-    margin: auto 45%;
-    position: absolute;
+    height: 0;
+    text-align: center;
 }
- .logo-img{
-     /*max-width: 200px;*/
-     /*max-height: 150px;*/
- }
 
  .theme-dropdown{
      margin: 25px 5px;

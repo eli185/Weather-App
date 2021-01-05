@@ -1,7 +1,12 @@
+:root {
+  --border-color: white;;
+  --text-color: #0ab4eb;
+}
+
 .favorites-page{
   border: 5px solid;
-  color: black;
-  margin: 120px;
+  color:var(--border-color);
+  margin: 120px 90px;
 }
 
 .weather{

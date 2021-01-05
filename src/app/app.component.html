@@ -1,8 +1,9 @@
 <div [ngClass]="weatherService.currentTheme === 'Light-Mode' ? 'light-background' : 'dark-background'">
-    <div class="app-logo">
-        <img class="logo-img" src="{{weatherService.currentTheme === 'Light-Mode' ? 'assets/logos/light-mode-logo.png' : 'assets/logos/dark-mode-logo.png'}}">
-    </div>
+
     <div class="navigation-buttons">
+        <div class="app-logo">
+            <img class="logo-img" src="{{weatherService.currentTheme === 'Light-Mode' ? 'assets/logos/light-mode-logo.png' : 'assets/logos/dark-mode-logo.png'}}">
+        </div>
         <button class="rout-button" mat-raised-button color="warn" routerLink="home">
             <mat-icon>home</mat-icon>  Home
         </button>
