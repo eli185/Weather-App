@@ -1,6 +1,15 @@
 # WeatherApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.6.
+Live demo :
+
+
+# WeatherApp
+You can check the weather all around the world ! 
+App information:
+# Writen on Angular 8.
+# Using outside Api.
+# Include theme changing using css vaiables.
+# Using rxjs.
 
 ## Development server
 
