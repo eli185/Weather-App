@@ -29,9 +29,9 @@ export class HomeComponent extends Unsubscribe implements OnInit {
 
     ngOnInit(): void {
         this.citiesOptions = [];
+        this.currentDegree = this.CELSIUS;
         this.currentCityForecastsWeatherData = this.weatherService.mockForecasts;
         this.currentConditionsData = this.weatherService.mockCurrentCondition;
-        this.currentDegree = this.CELSIUS;
         WeatherService.themeSubject.pipe(takeUntil(this.unsubscribe$)).subscribe((theme) => this.themeChanged(theme));
 
     }
