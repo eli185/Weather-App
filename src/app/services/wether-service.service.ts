@@ -253,20 +253,20 @@ export class WeatherService {
 
   getCurrentWeather(locationKey) {
     return this.http.get(
-        'http://dataservice.accuweather.com/currentconditions/v1/' + locationKey + '?apikey=jCj6Vr94FmFTGVv8GL3GnRWZI3AMa3Gr'
+        'https://dataservice.accuweather.com/currentconditions/v1/' + locationKey + '?apikey=jCj6Vr94FmFTGVv8GL3GnRWZI3AMa3Gr'
     );
   }
 
   getAutoCompleteSearchWeather(searchTerm): Observable<Object> {
     return this.http.get(
-        'http://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=jCj6Vr94FmFTGVv8GL3GnRWZI3AMa3Gr&q=' + searchTerm
+        'https://dataservice.accuweather.com/locations/v1/cities/autocomplete?apikey=jCj6Vr94FmFTGVv8GL3GnRWZI3AMa3Gr&q=' + searchTerm
     );
   }
 
 
   getForecastsWeather(locationKey) {
     return this.http.get(
-        'http://dataservice.accuweather.com/forecasts/v1/daily/5day/' + locationKey + '?apikey=jCj6Vr94FmFTGVv8GL3GnRWZI3AMa3Gr'
+        'https://dataservice.accuweather.com/forecasts/v1/daily/5day/' + locationKey + '?apikey=jCj6Vr94FmFTGVv8GL3GnRWZI3AMa3Gr'
     );
   }
 
