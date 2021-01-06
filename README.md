@@ -6,7 +6,7 @@ https://serene-refuge-74127.herokuapp.com/
 # WeatherApp
 You can check the weather all around the world ! 
 App information:
-### Writen on Angular 8.
+###  Written in angular 8.
 ### Using outside Api.
 ### Include theme changing using css vaiables.
 ### Using rxjs.
