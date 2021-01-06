@@ -16,7 +16,7 @@ export class City {
   providedIn: 'root'
 })
 export class WeatherService {
-  private favoritesCities :City[] = [];
+  private favoritesCities: City[] = [];
   currentTheme;
   themesOptions =  ['Light-Mode', 'Dark-Mode'];
    mockAutoComplete = [
